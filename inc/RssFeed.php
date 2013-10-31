@@ -16,7 +16,7 @@ class RSSFeed {
 		preg_match_all($patternSingleTorrent, $torrentTableData, $torrentSingleData);
 		
 		$loops=count($torrentSingleData['singleTorrent']);
-		for ($row = 1; $row < 4 ; $row++) {
+		for ($row = 0; $row < 4 ; $row++) {
 			
 			$patternPagination = "/(?i)td colspan=\"9\"/";
 			if (preg_match_all($patternPagination, $torrentSingleData['singleTorrent'][$row], $pagination)) continue;
