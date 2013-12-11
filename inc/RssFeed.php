@@ -4,7 +4,7 @@ class RSSFeed {
 	var $data = NULL;
 	
 	function createRSS($data) {			  
-		$http = 'http://thepiratebay.sx/search/'.$this->encodeSearch($data).'/0/3/0';
+		$http = 'http://thepiratebay.ac/search/'.$this->encodeSearch($data).'/0/3/0';
 		$data = $this->cUrl($http);
 		
 		$patternTorrentTable = "/(?i)(?:<table id=\"searchResult\">)(?<torrentTable>[\d\W\w\s ,.]*?)(?:<\/table>)/";  //[\d\W\w\s ,.]
