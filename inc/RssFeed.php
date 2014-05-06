@@ -108,7 +108,7 @@ class RSSFeed {
 				   ."   <title>Torrent Rss Feed</title> \n"
 				   ."   <description>Torrent Rss Feed</description> \n"
 				   ."   <lastBuildDate>" . gmdate('r') . "</lastBuildDate> \n"
-				   ."   <generator>ToRss ver. 1.00</generator> \n"
+				   ."   <generator>ToRss ver. 1.10</generator> \n"
 				   ."   <language>en</language> \n";
 				
 		return $rssHead;
