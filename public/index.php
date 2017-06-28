@@ -1,22 +1,27 @@
 <?php
-	require_once __DIR__ . '/../vendor/autoload.php';
-	$RSSFeed = new RSSFeed();
+use mndesign\ToRSS;
 
-	// Get shows
-	$file = json_decode(file_get_contents("inc/shows.json"),true);
+require_once __DIR__ . '/../vendor/autoload.php';
 
-	header('Content-type: text/xml'); 
+$RSSFeed = new ToRSS\RSSFeed();
 
-	// Creating RSS header
-	echo $RSSFeed->createRSSHead();
-		
-	// Creating RSS Body
-	foreach ($file as $key => $value) {
-		$data = array('query' => $value['query'],
-				 	  'ignore' => $value['ignore']);
+// Get shows
+$file = json_decode(file_get_contents("inc/shows.json"), true);
 
-		echo $RSSFeed->createRSS($data);
-	}
-				  
-	// Creating RSS Footer
-	echo $RSSFeed->createRSSFooter();
+header('Content-type: text/xml');
+
+// Creating RSS header
+echo $RSSFeed->createRSSHead();
+
+// Creating RSS Body
+foreach ($file as $key => $value) {
+    $data = array(
+        'query' => $value['query'],
+        'ignore' => $value['ignore']
+    );
+
+    echo $RSSFeed->createRSS($data);
+}
+
+// Creating RSS Footer
+echo $RSSFeed->createRSSFooter();
