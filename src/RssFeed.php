@@ -15,7 +15,7 @@ class RSSFeed
         $this->data = $this->cUrl($this->http);
 
         $patternTorrentTable = "/(?i)(?:<table id=\"searchResult\">)(?<torrentTable>[\d\W\w\s ,.]*?)(?:<\/table>)/";  //[\d\W\w\s ,.]
-        preg_match_all($patternTorrentTable, $data, $torrentTableDataArr);
+        preg_match_all($patternTorrentTable, $this->data, $torrentTableDataArr);
 
         $torrentTableData = $torrentTableDataArr['torrentTable'][0];
 
@@ -117,7 +117,7 @@ class RSSFeed
     public function createRSSHead()
     {
         $rssHead = "<?xml version='1.0' encoding='UTF-8' ?>\n"
-            . "<!DOCTYPE PUBLIC \"-//bitTorrent//DTD torrent 0.1//EN\" \"http://xmlns.ezrss.it/0.1/dtd/\">\n"
+            . "<!DOCTYPE torrent PUBLIC \"-//bitTorrent//DTD torrent 0.1//EN\" \"http://xmlns.ezrss.it/0.1/dtd/\">\n"
             . "<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\n"
             . "   <channel> \n"
             . "   <title>Torrent Rss Feed</title> \n"
