@@ -9,8 +9,10 @@ class RSSFeed
 
     public function createRSS($data)
     {
-        $http = 'https://thepiratebay.org/search/' . $this->encodeSearch($data) . '/0/3/0';
-        $data = $this->cUrl($http);
+        $rssBody = '';
+
+        $this->http = 'https://thepiratebay.org/search/' . $this->encodeSearch($data) . '/0/3/0';
+        $this->data = $this->cUrl($this->http);
 
         $patternTorrentTable = "/(?i)(?:<table id=\"searchResult\">)(?<torrentTable>[\d\W\w\s ,.]*?)(?:<\/table>)/";  //[\d\W\w\s ,.]
         preg_match_all($patternTorrentTable, $data, $torrentTableDataArr);
