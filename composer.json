@@ -1,0 +1,11 @@
+{
+  "name": "mndesign/torss",
+  "description": "RSS to track your TV show torrents.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "mndesign\\ToRSS\\": "src/"
+    }
+  }
+}
