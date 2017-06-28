@@ -1,4 +1,7 @@
-<?
+<?php
+
+namespace mndesign\ToRSS;
+
 class RSSFeed {
 	var $http = NULL;
 	var $data = NULL;
@@ -120,4 +123,3 @@ class RSSFeed {
 		return $rssFooter;
 	}
 }
-?>
