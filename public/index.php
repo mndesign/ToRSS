@@ -1,5 +1,5 @@
 <?php
-	include('inc/RssFeed.php');
+	require_once __DIR__ . '/../vendor/autoload.php';
 	$RSSFeed = new RSSFeed();
 
 	// Get shows
@@ -20,4 +20,3 @@
 				  
 	// Creating RSS Footer
 	echo $RSSFeed->createRSSFooter();
-?>
