@@ -1,0 +1,10 @@
+{
+  "Anger Management": {
+    "query": "anger management hdtv 720p",
+    "ignore": "-DutchReleaseTeam -rartv -publichd"
+  },
+  "Bones": {
+    "query": "bones hdtv 720p",
+    "ignore": "-DutchReleaseTeam -rartv -publichd -eztv"
+  }
+}
